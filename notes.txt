@@ -1,0 +1,6 @@
+design: https://www.figma.com/file/HnbndCHju8XhXf2PLh4Ghj/Chat-Dashboard?node-id=0%3A1
+
+Todo: 
+- Design NavButton
+- Design NavBar
+- Design Chat page
