@@ -5,7 +5,10 @@ export const NavButtonStyled = {};
 NavButtonStyled.Wrapper = styled.div`
   box-shadow: none;
   padding: 1rem 2rem;
-  color: ${(props) => props.theme.colors.primaryGray};
+  color: ${(props) =>
+    props.selected
+      ? props.theme.colors.primaryBlue
+      : props.theme.colors.primaryGray};
   font-size: 1rem;
   font-weight: 900;
   cursor: pointer;
@@ -15,6 +18,8 @@ NavButtonStyled.Wrapper = styled.div`
   -khtml-user-select: none;
   -webkit-user-select: none;
   display: flex;
+  background-color: ${(props) =>
+    props.selected ? props.theme.colors.secondaryWhite : 'unset'};
   &:hover {
     background-color: ${(props) => props.theme.colors.secondaryWhite};
   }

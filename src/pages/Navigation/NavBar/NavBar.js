@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import NavButton from '../NavButton';
 import {NavBar as S} from './NavBar.styled';
 
 export default function NavBar() {
   let history = useHistory();
+  const [selected, setSelected] = useState('');
 
   const handleClick = (e) => {
     const page = e.target.id;
+    setSelected(page);
     history.push(`/${page}`);
   };
 
@@ -19,22 +21,38 @@ export default function NavBar() {
       </S.ProfileContainer>
       <ul>
         <li>
-          <NavButton id="home" icon="home" onClick={handleClick}>
+          <NavButton
+            selected={selected === ''}
+            id=""
+            icon="home"
+            onClick={handleClick}
+          >
             HOME
           </NavButton>
         </li>
         <li>
-          <NavButton id="chat" icon="chat" onClick={handleClick}>
+          <NavButton
+            selected={selected === 'chat'}
+            id="chat"
+            icon="chat"
+            onClick={handleClick}
+          >
             CHAT
           </NavButton>
         </li>
         <li>
-          <NavButton id="contact" icon="contact" onClick={handleClick}>
+          <NavButton
+            selected={selected === 'contact'}
+            id="contact"
+            icon="contact"
+            onClick={handleClick}
+          >
             CONTACT
           </NavButton>
         </li>
         <li>
           <NavButton
+            selected={selected === 'notifications'}
             id="notifications"
             icon="notifications"
             onClick={handleClick}
@@ -43,12 +61,22 @@ export default function NavBar() {
           </NavButton>
         </li>
         <li>
-          <NavButton id="calendar" icon="calendar" onClick={handleClick}>
+          <NavButton
+            selected={selected === 'calendar'}
+            id="calendar"
+            icon="calendar"
+            onClick={handleClick}
+          >
             CALENDAR
           </NavButton>
         </li>
         <li>
-          <NavButton id="settings" icon="settings" onClick={handleClick}>
+          <NavButton
+            selected={selected === 'settings'}
+            id="settings"
+            icon="settings"
+            onClick={handleClick}
+          >
             SETTINGS
           </NavButton>
         </li>
