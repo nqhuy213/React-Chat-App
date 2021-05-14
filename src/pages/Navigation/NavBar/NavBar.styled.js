@@ -4,8 +4,9 @@ export const NavBar = {};
 
 NavBar.Wrapper = styled.section`
   background-color: ${(props) => props.theme.colors.primaryWhite};
-  height: 100%;
+  min-height: 100vh;
   padding: 0;
+  position: relative;
 `;
 
 NavBar.ProfileContainer = styled.section`
@@ -24,4 +25,6 @@ NavBar.ProfileImage = styled.img`
 
 NavBar.LogoutButtonWrapper = styled.div`
   box-shadow: none;
+  position: absolute;
+  bottom: 0;
 `;

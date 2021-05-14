@@ -1,6 +1,7 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
-export const Counter = {}
+export const Counter = {};
 
 Counter.Wrapper = styled.header`
-`
+  background-color: red;
+`;
